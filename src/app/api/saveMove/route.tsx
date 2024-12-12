@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   const { gameId, moveOrder, position } = await req.json();
-
+  console.log("Received data:", { gameId, moveOrder, position }); 
   try {
     const move = await prisma.move.create({
       data: {
